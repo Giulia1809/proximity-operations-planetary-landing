@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<robot name="terrain">
+  <link name="terrainLink">
+  <contact>
+    <lateral_friction value="1"/>
+  </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual>
+      <!--origin rpy="0 0 0" xyz="-10 5 -1"/-->
+      <!--origin rpy="0 0 0" xyz="-100 100 6"/-->
+      <!--Moon & Mars-->
+      <origin rpy="0 0 0" xyz="0 0 1"/>
+      <!--Titan-->
+      <!--origin rpy="0 0 0" xyz="-30 -30 1"/-->
+      <geometry>
+        <!--mesh filename="Gassendicrater3Xv.stl" scale=".12 .12 .12"/-->
+        <!--mesh filename="Aristarchusregionmoon3xv.stl" scale="1 1 1"/-->
+        <!--mesh filename="moon_near_side.stl" scale=".5 .5 .5"/-->
+        <!--mesh filename="moon_far_side.stl" scale=".5 .5 .5"/-->
+        <!--mesh filename="titan_surf.stl" scale=".1 .1 .1"/-->
+        <mesh filename="opportunityVictoriaCrater.stl" scale=".2 .2 .2"/>
+      </geometry>
+      <material name="mars_red">
+        <color rgba=".9 .4 .1 1"/>
+      </material>
+      <!--material name="moon_silver">
+        <color rgba="1 1 1 .9"/>
+      </material--->   
+      <!--material name="titan_soil">
+        <color rgba=".7 .6 .3 1"/>
+      </material-->
+    </visual>
+    
+    <collision concave="yes">
+      <!--origin rpy="0 0 0" xyz="-10 5 -1"/-->
+      <origin rpy="0 0 0" xyz="0 0 1"/>
+      <!--origin rpy="0 0 0" xyz="-30 -30 1"/--> 
+      <geometry>
+        <!--mesh filename="terrain3.obj" scale="1 1 1"/-->
+        <!--mesh filename="NAC_A13S.obj" scale=".1 .1 .1"/-->
+        <!--mesh filename="Gassendicrater3Xv.stl" scale=".12 .12 .12"/-->
+        <!--mesh filename="Aristarchusregionmoon3xv.stl" scale="1 1 1"/-->
+        <!--mesh filename="moon_near_side.stl" scale=".5 .5 .5"/-->
+        <!--mesh filename="moon_far_side.stl" scale=".5 .5 .5"/-->
+        <!--mesh filename="titan_surf.stl" scale=".1 .1 .1"/-->
+        <mesh filename="opportunityVictoriaCrater.stl" scale=".2 .2 .2"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="atmosphereLink">
+</robot>  

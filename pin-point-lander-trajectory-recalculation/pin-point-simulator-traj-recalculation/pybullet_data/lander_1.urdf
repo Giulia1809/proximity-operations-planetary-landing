@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<robot name="lander">
+  <link name="base_link"> <!--base is link index: -1 -->
+    <visual>
+      <geometry>
+        <cylinder length="0.3" radius="0.25" />
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="blue">   
+        <color rgba="0 0 .8 1"/>
+      </material>   
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.3" radius="0.25"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.5"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>   
+  </link>
+  <frame link="base_link" name="body" rpy="0 0 0" xyz="0 0 0" />
+  
+  <link name="head"> <!-- link index: 0 -->
+    <visual>
+      <geometry>
+        <sphere radius="0.2"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.2"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.5"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <joint name="head_swivel" type="fixed">
+    <parent link="base_link"/>
+    <child link="head"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="0 0 0.1"/>
+<limit effort="1000.0" lower="-0.38" upper="0" velocity="0.5"/>
+  </joint>
+  
+  <link name="propeller_1"> <!-- link index: 1 -->
+    <visual>
+      <geometry>
+        <box size="0.6 0.2 0.1"/>
+      </geometry>
+      <origin rpy="1.5 1.5 0" xyz="0 0 -0.3"/>
+      <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.6 0.2 0.1"/>
+        <!--origin rpy="1.5 1.5 0" xyz="0 0 -0.3"/-->
+      </geometry>
+      <origin rpy="1.5 1.5 0" xyz="0 0 -0.3"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="1.5 1.5 0" xyz="0 0 -0.3"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  
+  <joint name="base_to_propeller_1" type="fixed">
+    <parent link="base_link"/>
+    <child link="propeller_1"/>
+    <origin xyz="0.22 0 .25"/>
+  </joint>
+  
+  <link name="propeller_2">  <!-- link index: 2-->
+    <visual>
+      <geometry>
+        <box size="0.6 0.2 0.1"/>
+      </geometry>
+      <origin rpy="0 1.5 0" xyz="-0.25 0.25 -0.3"/>
+      <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.6 0.2 0.1"/>
+      </geometry>
+      <origin rpy="0 1.5 0" xyz="-0.25 0.25 -0.3"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0 1.5 0" xyz="-0.25 0.25 -0.3"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  
+  <joint name="base_to_propeller_2" type="fixed">
+    <parent link="base_link"/>
+    <child link="propeller_2"/>
+    <origin xyz="0.22 0 .25"/>
+  </joint>
+  
+    <link name="propeller_3">  <!-- link index: 3-->
+    <visual>
+      <geometry>
+        <box size="0.6 0.2 0.1"/>
+      </geometry>
+      <origin rpy="1.5 1.5 0" xyz="-0.5 0 -0.3"/>
+      <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.6 0.2 0.1"/>
+      </geometry>
+      <origin rpy="1.5 1.5 0" xyz="-0.5 0.0 -0.3"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="1.5 1.5 0" xyz="-0.5 0.0 -0.3"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  
+  <joint name="base_to_propeller_3" type="fixed">
+    <parent link="base_link"/>
+    <child link="propeller_3"/>
+    <origin xyz="0.22 0 .25"/>
+  </joint>
+  
+    <link name="propeller_4">  <!-- link index: 4-->
+    <visual>
+      <geometry>
+        <box size="0.6 0.2 0.1"/>
+      </geometry>
+      <origin rpy="0 1.5 0" xyz="-0.25 -0.25 -0.3"/>
+      <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.4 0.2 0.1"/>
+      </geometry>
+      <origin rpy="0 1.5 0" xyz="-0.25 -0.25 -0.3"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0 1.5 0" xyz="-0.25 -0.25 -0.3"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  
+  <joint name="base_to_propeller_4" type="fixed">
+    <parent link="base_link"/>
+    <child link="propeller_4"/>
+    <origin xyz="0.22 0 .25"/>
+  </joint>
+  
+  <link name="camera_link">  <!-- link index: 5 -->
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.125 -0.125 -0.2" />
+      <geometry>
+        <box size="0.05 0.05 0.05" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.125 -0.125 -0.2" />
+      <geometry>
+        <box size="0.1 0.1 0.1" />
+      </geometry>
+      <material name="white" />
+    </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin rpy="0 0 0" xyz="0.125 0.125 -0.2" />
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+  
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 0 1" />
+    <origin rpy="0 0 0" xyz="0.125 0.125 0" />
+    <parent link="base_link"/>
+    <child link="camera_link" />
+  </joint>
+
+
+  <force_element name="prop1">
+    <propellor lower_limit="0" upper_limit="50" scale_factor_thrust="1.0" scale_factor_moment="-0.0245">
+      <parent link="base_link"/>
+      <origin xyz="0 0 0"/>
+      <axis xyz="0 0 1"/>
+    </propellor>
+  </force_element>
+
+  <force_element name="prop2">
+    <propellor lower_limit="0" upper_limit="50" scale_factor_thrust="1.0" scale_factor_moment="-0.0245">
+      <parent link="base_link"/>
+      <origin xyz="-0.25 0.25 0"/>
+      <axis xyz="0 0 1"/>
+    </propellor>
+  </force_element>
+
+  <force_element name="prop3">
+    <propellor lower_limit="0" upper_limit="50" scale_factor_thrust="1.0" scale_factor_moment="-0.0245">
+      <parent link="base_link"/>
+      <origin xyz="-0.5 0 0"/>
+      <axis xyz="0 0 1"/>
+    </propellor>
+  </force_element>
+
+  <force_element name="prop4">
+    <propellor lower_limit="0" upper_limit="50" scale_factor_thrust="1.0" scale_factor_moment="-0.0245">
+      <parent link="base_link"/>
+      <origin xyz="-0.25 -0.25 0"/>
+      <axis xyz="0 0 1"/>
+    </propellor>
+  </force_element>
+  
+
+</robot>

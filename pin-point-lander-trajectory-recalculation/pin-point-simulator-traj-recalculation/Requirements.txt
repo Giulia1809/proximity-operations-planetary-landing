@@ -1,0 +1,14 @@
+- Simulator: 
+numpy
+gym
+pybullet
+math
+random
+
+- SAC:
+pytorch
+matplotlib
++ all the above
+
+Suggestion: Ubuntu 18.04 (Linux) or following 
+            Use Anaconda
