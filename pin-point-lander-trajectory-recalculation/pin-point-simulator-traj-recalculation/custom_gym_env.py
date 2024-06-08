@@ -1,7 +1,7 @@
 import gym
 from gym import spaces
 import numpy as np
-import main_a
+import main_interactive
 
 #Define a Custom environment that follows gym interface --> define a class inheriting from gym.Env class
 
