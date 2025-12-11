@@ -9,7 +9,7 @@ Find here a gathering of useful Python-binded, ROS-compatible, customizable, rea
 ## Planetary Landing Simulator: Final EDL 
 *planetary-landing-simulator-final-edl*
 
-***Human-Coded*** *(with love)* for papers: 
+:heartpulse: ***Human-Coded*** *(with love)* for papers: 
 
 1. [Learning Transferable Policies for Autonomous Planetary Landing via Deep Reinforcement Learning](https://www.researchgate.net/publication/355908553_Learning_Transferable_Policies_for_Autonomous_Planetary_Landing_via_Deep_Reinforcement_Learning)
 
