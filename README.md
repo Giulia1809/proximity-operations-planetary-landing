@@ -1,9 +1,10 @@
 # Proximity Operations: Planetary Landing 
 *proximity-operations-planetary-landing*
 
-
 Simulator for Proximity Planetary Landing Operations (including Moon, Mars, Titan, etc.). 
 Find here a gathering of useful Python-binded, ROS-compatible, customizable, real-physics (Bullet/PyBullet physical engine) simulators. 
+
+### Please cite at least one of the following papers if using these simulators and/or a modified version: 
 
 ## Planetary Landing Simulator: Final EDL 
 *planetary-landing-simulator-final-edl*
